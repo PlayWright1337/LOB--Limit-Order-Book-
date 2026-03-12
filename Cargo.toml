@@ -1,0 +1,19 @@
+[package]
+name = "lob_engine"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+arc-swap = "1.7"
+parking_lot = "0.12"
+serde = { version = "1.0", features = ["derive"] }
+smallvec = { version = "1.15", features = ["const_generics"] }
+tokio = { version = "1.48", features = ["rt-multi-thread", "macros", "sync"] }
+
+[dev-dependencies]
+criterion = { version = "0.7", features = ["html_reports"] }
+serde_json = "1.0"
+
+[[bench]]
+name = "matching_bench"
+harness = false
